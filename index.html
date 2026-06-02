@@ -374,6 +374,10 @@
           <label>Địa chỉ <span class="req">*</span></label>
           <input type="text" name="diachi" placeholder="Quận/Huyện, Tỉnh/Thành phố" required />
         </div>
+        <div class="field">
+          <label>Người giới thiệu</label>
+          <input type="text" name="nguoigioithieu" placeholder="Tên người đã giới thiệu bạn (nếu có)" />
+        </div>
         <button type="submit" class="btn btn-primary" id="submitBtn">Đăng ký miễn phí</button>
         <p class="privacy">Thông tin của bạn được giữ kín và chỉ dùng để liên hệ về khóa học. 🤍</p>
       </form>
@@ -417,6 +421,7 @@
       sodienthoai: form.sodienthoai.value.trim(),
       email: form.email.value.trim(),
       diachi: form.diachi.value.trim(),
+      nguoigioithieu: form.nguoigioithieu.value.trim(),
       khoahoc: "Chạm Kinh Thánh",
       thoigian: new Date().toISOString()
     };
