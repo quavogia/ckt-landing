@@ -398,7 +398,7 @@
      Để trống ("") thì form sẽ chạy chế độ DEMO (hiện thông báo
      thành công nhưng KHÔNG gửi dữ liệu đi đâu cả).
      ============================================================ */
-  const WEBHOOK_URL = ""; // ví dụ: "https://180-93-59-9.sslip.io/webhook/dangky-khoahoc"
+  const WEBHOOK_URL = "https://180-93-59-9.sslip.io/webhook/dangky-khoahoc";
 
   const form = document.getElementById('signupForm');
   const msg  = document.getElementById('formMsg');
@@ -417,7 +417,7 @@
       sodienthoai: form.sodienthoai.value.trim(),
       email: form.email.value.trim(),
       diachi: form.diachi.value.trim(),
-      khoahoc: "Món quà tặng người trân quý",
+      khoahoc: "Chạm Kinh Thánh",
       thoigian: new Date().toISOString()
     };
 
