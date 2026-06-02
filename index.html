@@ -78,6 +78,45 @@
   .hero-meta{margin-top:26px;display:flex;gap:26px;justify-content:center;flex-wrap:wrap;font-size:14.5px;color:var(--ink-soft);}
   .hero-meta b{color:var(--ink);}
 
+  /* JOURNEY — lời tâm sự & các chặng đường */
+  .journey{
+    background:
+      linear-gradient(180deg,rgba(255,255,255,.74) 0%,rgba(255,253,249,.66) 48%,rgba(255,255,255,.96) 100%),
+      url('./bg-path.jpeg');
+    background-size:cover;background-position:center;background-repeat:no-repeat;}
+  .journey-intro{max-width:720px;margin:0 auto;text-align:center;}
+  .journey-intro .lead-quote{font-family:'Lora',serif;font-style:italic;
+    font-size:clamp(19px,2.7vw,25px);line-height:1.6;color:var(--ink);}
+  .journey-intro .lead-quote b{font-style:normal;color:var(--gold-deep);font-weight:600;}
+  .journey-intro .sign{display:block;margin-top:18px;font-style:normal;font-family:'Be Vietnam Pro',sans-serif;
+    font-size:15px;color:var(--ink-soft);letter-spacing:.3px;}
+  /* ROADMAP ngang — leo từ dưới-trái lên trên-phải */
+  .roadmap{position:relative;max-width:1010px;margin:48px auto 0;padding:10px 0 0 56px;}
+  .road-bg{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;}
+  .road-row{position:relative;z-index:1;display:flex;align-items:flex-end;justify-content:space-between;gap:14px;}
+  .rstage{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;text-align:center;}
+  .rstage .rdot{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;font-size:24px;
+    background:#fff;border:2px solid #ecd9b8;box-shadow:0 8px 20px rgba(168,127,60,.18);margin-bottom:14px;}
+  .rstage.final .rdot{background:linear-gradient(135deg,var(--gold),#e2bd6f);border-color:transparent;
+    color:#fff;box-shadow:0 10px 26px rgba(168,127,60,.42);}
+  .rstage .rcard{background:#fff;border:1px solid var(--line);border-radius:15px;padding:16px 15px;transition:.2s;width:100%;}
+  .rstage .rcard:hover{box-shadow:var(--shadow);transform:translateY(-3px);border-color:#ecd9b8;}
+  .rstage .rlabel{display:block;font-size:11px;font-weight:600;letter-spacing:.9px;text-transform:uppercase;color:var(--gold-deep);}
+  .rstage .rcard h3{font-family:'Lora',serif;font-size:16.5px;font-weight:600;margin:5px 0 7px;line-height:1.3;}
+  .rstage .rcard p{font-size:13.5px;color:var(--ink-soft);line-height:1.6;}
+  /* bậc thang đi lên dần sang phải */
+  .rstage:nth-child(2){margin-bottom:46px;}
+  .rstage:nth-child(3){margin-bottom:92px;}
+  .rstage:nth-child(4){margin-bottom:138px;}
+  .rstage:nth-child(5){margin-bottom:184px;}
+  /* hình người ở vạch xuất phát */
+  .road-person{position:absolute;z-index:3;left:0;bottom:8px;width:52px;height:auto;
+    filter:drop-shadow(0 6px 10px rgba(120,98,60,.25));}
+  .road-start-label{position:absolute;z-index:3;left:-6px;bottom:-18px;font-size:11.5px;color:var(--ink-soft);
+    font-style:italic;white-space:nowrap;}
+  .journey-cta{text-align:center;margin-top:54px;}
+  .journey-cta .hint{display:block;margin-bottom:16px;color:var(--ink-soft);font-size:16px;}
+
   /* SECTION */
   section{padding:66px 0;position:relative;overflow:hidden;}
   /* vầng sáng dịu trang trí, không phụ thuộc ảnh ngoài */
@@ -183,6 +222,17 @@
     section{padding:52px 0;}
     .course-box,.form-card{padding:30px 22px;}
   }
+  /* ROADMAP: dưới 900px chuyển sang xếp dọc cho dễ đọc trên điện thoại */
+  @media (max-width:900px){
+    .roadmap{padding-left:0;}
+    .road-bg,.road-person,.road-start-label{display:none;}
+    .road-row{flex-direction:column;gap:16px;}
+    .rstage{margin-bottom:0 !important;flex-direction:row;gap:14px;text-align:left;align-items:flex-start;width:100%;}
+    .rstage .rdot{margin-bottom:0;flex:none;}
+    .rstage .rcard{flex:1;padding:18px 20px;}
+    .rstage .rcard h3{font-size:18px;}
+    .rstage .rcard p{font-size:15px;}
+  }
 </style>
 </head>
 <body>
@@ -210,6 +260,93 @@
       <span><b>Online qua Zoom</b> + Offline</span>
       <span><b>16</b> buổi đồng hành</span>
       <span>Dành cho <b>tất cả mọi người</b></span>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY / LỜI TÂM SỰ — CÁC CHẶNG ĐƯỜNG -->
+<section class="journey">
+  <span class="glow g1"></span>
+  <span class="glow g2"></span>
+  <div class="wrap">
+    <div class="eyebrow">Một lời tâm sự</div>
+    <h2 class="h2">Tôi đã từng đứng ở vạch xuất phát<br/>— như bạn lúc này</h2>
+
+    <div class="journey-intro" style="margin-top:26px;">
+      <p class="lead-quote">“Bạn đã bao giờ nghĩ Kinh Thánh chỉ là cuốn sách dạy <b>tôn giáo</b>, dành riêng cho người có đạo chưa? Nếu có… thì bạn giống hệt tôi ngày trước.”
+        <span class="sign">— và đây là hành trình đã thay đổi tôi</span>
+      </p>
+    </div>
+
+    <div class="roadmap">
+      <!-- nền con đường leo dốc từ dưới-trái lên trên-phải -->
+      <svg class="road-bg" viewBox="0 0 1000 400" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M10,392 C230,378 330,262 480,212 C640,158 780,96 998,46"
+          fill="none" stroke="#e7d3a6" stroke-width="26" stroke-linecap="round" opacity=".45"/>
+        <path d="M10,392 C230,378 330,262 480,212 C640,158 780,96 998,46"
+          fill="none" stroke="#fff" stroke-width="2.5" stroke-dasharray="2 14" stroke-linecap="round" opacity=".9"/>
+      </svg>
+
+      <!-- hình người biểu tượng đứng ở vạch xuất phát -->
+      <svg class="road-person" viewBox="0 0 44 76" aria-label="Người đứng ở vạch xuất phát">
+        <ellipse cx="22" cy="72" rx="13" ry="3.2" fill="rgba(120,98,60,.22)"/>
+        <circle cx="22" cy="11" r="7.5" fill="#a87f3c"/>
+        <path d="M22 19c-6.4 0-9 4.8-9.6 10.8l-1.7 16.4c-.2 2 2.8 2.4 3.2.5l2.4-12.2h1.1l-1.2 30c-.1 2.6 3.8 2.6 4 .1l1.8-19.9h.4l1.8 19.9c.2 2.5 4.1 2.5 4-.1l-1.2-30h1.1l2.4 12.2c.4 1.9 3.4 1.5 3.2-.5l-1.7-16.4C31 23.8 28.4 19 22 19z" fill="#5e564c"/>
+      </svg>
+      <span class="road-start-label">↑ Bạn đang ở đây</span>
+
+      <div class="road-row">
+        <!-- Chặng 0 -->
+        <div class="rstage">
+          <div class="rdot">🧭</div>
+          <div class="rcard">
+            <span class="rlabel">Vạch xuất phát</span>
+            <h3>“Sách này chắc không dành cho tôi”</h3>
+            <p>Tôi từng nghĩ Kinh Thánh xa lạ, chẳng liên quan đời mình — chỉ đứng đây với một câu hỏi nhỏ: <em>liệu trong đó có gì cho người như tôi?</em></p>
+          </div>
+        </div>
+        <!-- Chặng 1 -->
+        <div class="rstage">
+          <div class="rdot">🌱</div>
+          <div class="rcard">
+            <span class="rlabel">Chặng 1 · Biết</span>
+            <h3>Không phải chuyện “tôn giáo”</h3>
+            <p>Tôi thử tìm hiểu, chỉ để biết. Hóa ra Kinh Thánh nói về một Đấng có thật đã tạo nên cả tôi — không phải một khái niệm xa xôi.</p>
+          </div>
+        </div>
+        <!-- Chặng 2 -->
+        <div class="rstage">
+          <div class="rdot">🕊️</div>
+          <div class="rcard">
+            <span class="rlabel">Chặng 2 · Tin</span>
+            <h3>Hoài nghi nhường chỗ cho tin</h3>
+            <p>Những điều tưởng khó tin lại sáng tỏ lạ lùng. Từng chút một, hoài nghi trong tôi nhường chỗ cho niềm tin — vì chính lòng tôi được thuyết phục.</p>
+          </div>
+        </div>
+        <!-- Chặng 3 -->
+        <div class="rstage">
+          <div class="rdot">🤍</div>
+          <div class="rcard">
+            <span class="rlabel">Chặng 3 · Yêu</span>
+            <h3>Tôi được yêu thương</h3>
+            <p>Tôi bắt đầu cảm nhận mình được yêu, ngay cả những phần tưởng chẳng đáng. Những vết thương cũ trong lòng dần được vỗ về.</p>
+          </div>
+        </div>
+        <!-- Chặng cuối -->
+        <div class="rstage final">
+          <div class="rdot">✦</div>
+          <div class="rcard">
+            <span class="rlabel">Món quà vô giá</span>
+            <h3>Một món quà, không phải kiến thức</h3>
+            <p>Cuối đường, tôi tìm được bình an thật và lời đáp cho “tôi là ai” — món quà miễn phí mà vô giá. Mời bạn bước thử bước đầu tiên.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="journey-cta">
+      <span class="hint">Bạn cũng đang đứng ở một chặng nào đó. Hãy để chúng tôi đồng hành.</span>
+      <a href="#dangky" class="btn btn-primary">Tôi muốn bắt đầu hành trình</a>
     </div>
   </div>
 </section>
