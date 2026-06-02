@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Món quà tặng người trân quý — Khóa học Kinh Thánh miễn phí | Chạm Kinh Thánh</title>
+<meta name="description" content="Khóa học Kinh Thánh online & offline 16 buổi, hoàn toàn miễn phí. Đi tìm câu trả lời 'Tôi là ai?' và sự chữa lành sâu trong tâm hồn. Đăng ký ngay." />
+<meta property="og:title" content="Món quà tặng người trân quý — Khóa học Kinh Thánh miễn phí" />
+<meta property="og:description" content="16 buổi học miễn phí — một món quà miễn phí nhưng vô giá. Đăng ký ngay hôm nay." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#ffffff;
+    --bg-soft:#fbf8f3;
+    --bg-warm:#f6efe4;
+    --ink:#2b2722;
+    --ink-soft:#5e564c;
+    --gold:#c69b54;
+    --gold-deep:#a87f3c;
+    --line:#ece4d7;
+    --shadow:0 18px 50px rgba(120,98,60,.12);
+    --radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Be Vietnam Pro',system-ui,-apple-system,sans-serif;
+    color:var(--ink);
+    background-color:var(--bg);
+    /* hoa văn chấm rất nhẹ phủ toàn trang — giữ nền trắng/sạch, chỉ tạo chiều sâu */
+    background-image:radial-gradient(rgba(198,155,84,.06) 1px,transparent 1.4px);
+    background-size:22px 22px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{font-family:'Lora',Georgia,serif;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px;}
+  .narrow{max-width:760px;margin:0 auto;}
+  a{color:inherit;}
+  .gold{color:var(--gold-deep);}
+
+  /* NAV */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .brand{display:flex;align-items:center;gap:11px;font-family:'Lora',serif;font-weight:600;font-size:19px;letter-spacing:.2px;}
+  .brand img{width:40px;height:40px;border-radius:50%;object-fit:cover;box-shadow:0 3px 10px rgba(168,127,60,.25);border:1.5px solid #f0e3c9;}
+  .nav a.cta{background:var(--gold-deep);color:#fff;padding:9px 18px;border-radius:40px;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap;transition:.2s;}
+  .nav a.cta:hover{background:var(--gold);}
+
+  /* HERO */
+  .hero{position:relative;isolation:isolate;
+    background:
+      linear-gradient(180deg,rgba(255,255,255,.46) 0%,rgba(255,253,249,.40) 45%,rgba(255,255,255,.92) 100%),
+      url('./bg-hero.jpeg');
+    background-size:cover;background-position:center top;background-repeat:no-repeat;
+    padding:60px 0 70px;text-align:center;overflow:hidden;}
+  .hero-logo{width:120px;height:120px;border-radius:50%;object-fit:cover;margin:0 auto 26px;display:block;
+    box-shadow:0 14px 38px rgba(168,127,60,.30);border:3px solid #fff;outline:1px solid #efe2cb;}
+  .badge{display:inline-block;background:var(--bg-warm);color:var(--gold-deep);
+    font-size:13px;font-weight:600;letter-spacing:.4px;padding:7px 16px;border-radius:30px;border:1px solid #efe2cb;margin-bottom:22px;}
+  .hero h1{font-size:clamp(31px,5.4vw,52px);line-height:1.18;font-weight:600;letter-spacing:-.3px;}
+  .hero h1 em{font-style:italic;color:var(--gold-deep);}
+  .hero .lead{font-size:clamp(17px,2.3vw,20px);color:var(--ink-soft);margin:22px auto 0;max-width:660px;}
+  .hero-cta{margin-top:34px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .btn{display:inline-block;text-decoration:none;font-weight:600;border-radius:44px;padding:15px 30px;font-size:16px;transition:.2s;cursor:pointer;border:none;}
+  .btn-primary{background:var(--gold-deep);color:#fff;box-shadow:0 12px 26px rgba(168,127,60,.28);}
+  .btn-primary:hover{background:var(--gold);transform:translateY(-1px);}
+  .btn-ghost{background:#fff;color:var(--ink);border:1px solid var(--line);}
+  .btn-ghost:hover{border-color:var(--gold);}
+  .hero-meta{margin-top:26px;display:flex;gap:26px;justify-content:center;flex-wrap:wrap;font-size:14.5px;color:var(--ink-soft);}
+  .hero-meta b{color:var(--ink);}
+
+  /* SECTION */
+  section{padding:66px 0;position:relative;overflow:hidden;}
+  /* vầng sáng dịu trang trí, không phụ thuộc ảnh ngoài */
+  .glow{position:absolute;z-index:0;border-radius:50%;filter:blur(60px);pointer-events:none;}
+  .glow.g1{width:340px;height:340px;top:-120px;right:-100px;background:radial-gradient(circle,rgba(241,201,121,.35),transparent 70%);}
+  .glow.g2{width:300px;height:300px;bottom:-130px;left:-110px;background:radial-gradient(circle,rgba(214,229,210,.45),transparent 70%);}
+  section > .wrap{position:relative;z-index:1;}
+  .eyebrow{text-align:center;color:var(--gold-deep);font-weight:600;letter-spacing:1.4px;font-size:13px;text-transform:uppercase;margin-bottom:12px;}
+  .h2{text-align:center;font-size:clamp(25px,3.6vw,36px);font-weight:600;line-height:1.25;}
+  .sub{text-align:center;color:var(--ink-soft);max-width:640px;margin:16px auto 0;font-size:17px;}
+
+  /* MESSAGE CARDS */
+  .grid{display:grid;gap:22px;margin-top:46px;}
+  .grid-2{grid-template-columns:repeat(2,1fr);}
+  .grid-4{grid-template-columns:repeat(4,1fr);}
+  .card{background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;transition:.2s;}
+  .card:hover{box-shadow:var(--shadow);transform:translateY(-3px);}
+  .card .ico{width:48px;height:48px;border-radius:13px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;font-size:23px;margin-bottom:16px;}
+  .card h3{font-size:20px;font-weight:600;margin-bottom:8px;}
+  .card p{color:var(--ink-soft);font-size:15.5px;}
+
+  /* OBJECTIVES — 7 mục tiêu */
+  .obj-list{max-width:840px;margin:46px auto 0;display:grid;gap:16px;}
+  .obj{display:flex;gap:18px;align-items:flex-start;background:var(--bg-soft);border:1px solid var(--line);
+    border-radius:16px;padding:22px 24px;transition:.2s;}
+  .obj:hover{box-shadow:var(--shadow);transform:translateY(-2px);border-color:#ecd9b8;}
+  .obj .num{flex:none;width:42px;height:42px;border-radius:12px;display:grid;place-items:center;
+    font-family:'Lora',serif;font-weight:600;font-size:19px;color:#fff;
+    background:linear-gradient(135deg,var(--gold),#e2bd6f);box-shadow:0 6px 14px rgba(168,127,60,.28);}
+  .obj h3{font-size:18px;font-weight:600;margin-bottom:4px;line-height:1.4;}
+  .obj p{color:var(--ink-soft);font-size:15px;}
+  .obj .ref{color:var(--gold-deep);font-style:italic;}
+
+  /* COURSE / 16 buoi */
+  .course{background:var(--bg-soft);}
+  .course-box{background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:40px 34px;}
+  .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;text-align:center;}
+  .stat .n{font-family:'Lora',serif;font-size:34px;font-weight:600;color:var(--gold-deep);}
+  .stat .l{font-size:14px;color:var(--ink-soft);margin-top:2px;}
+  .divider{height:1px;background:var(--line);margin:32px 0;}
+  .feat{display:flex;gap:14px;align-items:flex-start;padding:11px 0;}
+  .feat .chk{flex:none;width:24px;height:24px;border-radius:50%;background:var(--bg-warm);color:var(--gold-deep);display:grid;place-items:center;font-size:14px;font-weight:700;margin-top:2px;}
+  .feat p{font-size:15.5px;}
+  .feat b{color:var(--ink);}
+
+  /* IDENTITY / healing band */
+  .band{
+    background:
+      linear-gradient(180deg,rgba(255,255,255,.60) 0%,rgba(255,254,250,.48) 45%,rgba(255,255,255,.92) 100%),
+      url('./bg-path.jpeg');
+    background-size:cover;background-position:center;background-repeat:no-repeat;}
+  .qa{max-width:780px;margin:42px auto 0;}
+  .qa-item{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 28px;margin-bottom:18px;}
+  .qa-item .q{font-family:'Lora',serif;font-size:21px;font-weight:600;color:var(--ink);margin-bottom:8px;}
+  .qa-item .q span{color:var(--gold-deep);}
+  .qa-item p{color:var(--ink-soft);font-size:16px;}
+  .verse{font-family:'Lora',serif;font-style:italic;text-align:center;font-size:clamp(20px,2.8vw,27px);line-height:1.5;color:var(--ink);max-width:720px;margin:0 auto;}
+  .verse .ref{display:block;font-style:normal;font-size:15px;color:var(--gold-deep);margin-top:16px;letter-spacing:.5px;}
+
+  /* TESTIMONIALS */
+  .tnote{text-align:center;font-size:13px;color:#a99;background:#fbf6ee;border:1px dashed #e6d8bf;border-radius:30px;display:inline-block;padding:6px 16px;margin:0 auto 8px;}
+  .tnote-wrap{text-align:center;margin-top:10px;}
+  .t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:36px;}
+  .quote{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px 26px;display:flex;flex-direction:column;}
+  .quote .stars{color:var(--gold);font-size:15px;letter-spacing:2px;margin-bottom:12px;}
+  .quote p{font-size:15.5px;color:var(--ink);flex:1;}
+  .quote .who{display:flex;align-items:center;gap:12px;margin-top:20px;padding-top:18px;border-top:1px solid var(--line);}
+  .quote .av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#e8c987,var(--gold));color:#fff;display:grid;place-items:center;font-family:'Lora',serif;font-weight:600;font-size:18px;}
+  .quote .who b{font-size:15px;}
+  .quote .who small{display:block;color:var(--ink-soft);font-size:13px;}
+
+  /* FORM */
+  .signup{
+    background:
+      linear-gradient(180deg,rgba(255,255,255,.62) 0%,rgba(255,253,248,.50) 50%,rgba(255,255,255,.93) 100%),
+      url('./bg-peace.jpeg');
+    background-size:cover;background-position:center;background-repeat:no-repeat;}
+  .form-card{background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:40px 34px;max-width:560px;margin:40px auto 0;}
+  .form-card h3{font-size:24px;font-weight:600;text-align:center;}
+  .form-card .fc-sub{text-align:center;color:var(--ink-soft);margin:10px 0 26px;font-size:15.5px;}
+  .field{margin-bottom:16px;}
+  .field label{display:block;font-size:14px;font-weight:500;margin-bottom:6px;color:var(--ink);}
+  .field label .req{color:#c0793c;}
+  .field input{width:100%;padding:13px 15px;border:1px solid #e3dccf;border-radius:12px;font-size:15.5px;font-family:inherit;background:var(--bg-soft);transition:.18s;}
+  .field input:focus{outline:none;border-color:var(--gold);background:#fff;box-shadow:0 0 0 3px rgba(198,155,84,.15);}
+  .form-card .btn-primary{width:100%;margin-top:8px;font-size:17px;padding:16px;}
+  .privacy{text-align:center;font-size:13px;color:var(--ink-soft);margin-top:14px;}
+  .form-msg{display:none;text-align:center;padding:16px;border-radius:12px;margin-bottom:18px;font-size:15px;}
+  .form-msg.ok{display:block;background:#eef7ee;color:#2f6b34;border:1px solid #cfe6cf;}
+  .form-msg.err{display:block;background:#fdeeee;color:#9c3b3b;border:1px solid #f0cccc;}
+
+  /* FOOTER */
+  footer{background:#fbf8f3;border-top:1px solid var(--line);padding:42px 0;text-align:center;color:var(--ink-soft);font-size:14.5px;}
+  footer .brand{justify-content:center;margin-bottom:12px;color:var(--ink);}
+
+  @media (max-width:820px){
+    .grid-4{grid-template-columns:repeat(2,1fr);}
+    .t-grid{grid-template-columns:1fr;}
+    .stat-row{grid-template-columns:repeat(2,1fr);gap:26px;}
+  }
+  @media (max-width:560px){
+    .grid-2{grid-template-columns:1fr;}
+    section{padding:52px 0;}
+    .course-box,.form-card{padding:30px 22px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-in">
+    <div class="brand"><img src="./logo.jpeg" alt="Logo Chạm Kinh Thánh" /> Chạm Kinh Thánh</div>
+    <a href="#dangky" class="cta">Đăng ký miễn phí</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <img class="hero-logo" src="./logo.jpeg" alt="Logo Chạm Kinh Thánh — bàn tay chạm vào Kinh Thánh" />
+    <span class="badge">✦ Khóa học hoàn toàn miễn phí · 16 buổi</span>
+    <h1>Món quà tặng <em>người trân quý</em></h1>
+    <p class="lead">Một món quà <b>miễn phí nhưng vô giá</b> — lời mời bước vào hành trình tìm lại chính mình, gặp gỡ Đấng đã dệt nên bạn, và đón nhận sự bình an chữa lành tận sâu trong tâm hồn.</p>
+    <div class="hero-cta">
+      <a href="#dangky" class="btn btn-primary">Đăng ký miễn phí ngay</a>
+      <a href="#khoahoc" class="btn btn-ghost">Tìm hiểu khóa học</a>
+    </div>
+    <div class="hero-meta">
+      <span><b>Online qua Zoom</b> + Offline</span>
+      <span><b>16</b> buổi đồng hành</span>
+      <span>Dành cho <b>tất cả mọi người</b></span>
+    </div>
+  </div>
+</section>
+
+<!-- CORE MESSAGE -->
+<section>
+  <span class="glow g1"></span>
+  <div class="wrap">
+    <div class="eyebrow">Mục tiêu khóa học</div>
+    <h2 class="h2">7 điều quý giá bạn sẽ mang về<br/>sau hành trình 16 buổi</h2>
+    <p class="sub">Khóa học này không dành riêng cho ai. Dù bạn đã quen thuộc hay chưa từng mở Kinh Thánh, bạn đều được chào đón đến đúng như bạn đang là.</p>
+
+    <div class="obj-list">
+      <div class="obj">
+        <div class="num">1</div>
+        <div><h3>Nhận biết sự tồn tại của Đức Chúa Trời</h3>
+        <p>Khám phá những bằng chứng cho thấy Đức Chúa Trời thật sự hiện hữu, được làm chứng cách rõ ràng và sống động qua chính Kinh Thánh.</p></div>
+      </div>
+      <div class="obj">
+        <div class="num">2</div>
+        <div><h3>Thấy Kinh Thánh chính là sự thật</h3>
+        <p>Hiểu vì sao Kinh Thánh không phải chuyện xa xưa, mà là sự thật đáng tin — vững vàng qua thời gian và gần gũi với đời sống hôm nay.</p></div>
+      </div>
+      <div class="obj">
+        <div class="num">3</div>
+        <div><h3>Mở ra những điều mầu nhiệm sâu thẳm</h3>
+        <p>Bước vào những lẽ thật từng được giữ kín — những điều mầu nhiệm bên trong Kinh Thánh đã bị đóng lại bởi <span class="ref">bảy ấn (Khải Huyền 5:1-5)</span>.</p></div>
+      </div>
+      <div class="obj">
+        <div class="num">4</div>
+        <div><h3>Nhìn thấy vận mệnh &amp; tương lai chắc chắn</h3>
+        <p>Chiêm nghiệm những lời tiên tri được nói ra từ hàng ngàn năm trước và đã ứng nghiệm chính xác — cho ta một tương lai chắc chắn để vững lòng.</p></div>
+      </div>
+      <div class="obj">
+        <div class="num">5</div>
+        <div><h3>Trả lời câu hỏi "Tôi là ai?"</h3>
+        <p>Đi đến tận cùng câu hỏi lớn nhất của đời người: bạn từ đâu đến, vì sao bạn ở đây, và bạn thật sự thuộc về điều gì.</p></div>
+      </div>
+      <div class="obj">
+        <div class="num">6</div>
+        <div><h3>Hiểu nguồn gốc nỗi đau &amp; được chữa lành</h3>
+        <p>Tìm ra cội rễ của những tổn thương trong lòng, để rồi đón nhận sự chữa lành tận sâu thẳm bên trong linh hồn.</p></div>
+      </div>
+      <div class="obj">
+        <div class="num">7</div>
+        <div><h3>Nắm giữ chìa khóa của bình an &amp; cứu rỗi</h3>
+        <p>Cầm trong tay chiếc chìa khóa dẫn tới sự bình an thật và niềm hy vọng về sự cứu rỗi — món quà quý giá nhất dành cho tâm hồn bạn.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COURSE -->
+<section class="course" id="khoahoc">
+  <span class="glow g2"></span>
+  <div class="wrap">
+    <div class="eyebrow">Về khóa học</div>
+    <h2 class="h2">16 buổi đồng hành — từng bước một, không vội vàng</h2>
+    <p class="sub">Một lộ trình được sắp đặt nhẹ nhàng để bạn vừa học, vừa cảm, vừa được chạm đến.</p>
+
+    <div class="course-box narrow" style="margin-top:42px;">
+      <div class="stat-row">
+        <div class="stat"><div class="n">16</div><div class="l">buổi học</div></div>
+        <div class="stat"><div class="n">0đ</div><div class="l">học phí</div></div>
+        <div class="stat"><div class="n">2</div><div class="l">hình thức học</div></div>
+        <div class="stat"><div class="n">∞</div><div class="l">giá trị nhận lại</div></div>
+      </div>
+      <div class="divider"></div>
+      <div class="feat"><span class="chk">✓</span><p><b>Học linh hoạt:</b> tham gia online qua Zoom ở bất cứ đâu, hoặc đến lớp offline để được gặp gỡ và đồng hành trực tiếp.</p></div>
+      <div class="feat"><span class="chk">✓</span><p><b>Lộ trình 16 buổi rõ ràng:</b> đi từ những câu hỏi nền tảng đến chiều sâu tâm linh, mỗi buổi một bước tiến gần hơn.</p></div>
+      <div class="feat"><span class="chk">✓</span><p><b>Người hướng dẫn tận tâm:</b> luôn sẵn lòng lắng nghe, giải đáp và đồng hành cùng bạn trên hành trình.</p></div>
+      <div class="feat"><span class="chk">✓</span><p><b>Hoàn toàn miễn phí:</b> không một khoản phí ẩn nào. Đây là món quà được trao đi bằng tấm lòng.</p></div>
+      <div style="text-align:center;margin-top:28px;">
+        <a href="#dangky" class="btn btn-primary">Giữ chỗ cho tôi — miễn phí</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IDENTITY / HEALING -->
+<section class="band">
+  <span class="glow g1"></span>
+  <span class="glow g2"></span>
+  <div class="wrap">
+    <div class="eyebrow">Tôi là ai?</div>
+    <h2 class="h2">Câu hỏi bạn từng tự hỏi<br/>trong những đêm lặng lẽ</h2>
+
+    <div class="qa">
+      <div class="qa-item">
+        <div class="q"><span>“</span>Cuộc đời tôi rốt cuộc có ý nghĩa gì?<span>”</span></div>
+        <p>Giữa bộn bề mưu sinh, đôi khi ta tự hỏi mình đang sống vì điều gì. Kinh Thánh không né tránh câu hỏi ấy — mà mở ra một câu trả lời khiến lòng người được an nghỉ.</p>
+      </div>
+      <div class="qa-item">
+        <div class="q"><span>“</span>Vì sao tôi mang trong lòng những vết thương khó gọi tên?<span>”</span></div>
+        <p>Có những nỗi đau ta giấu kỹ đến mức quên mất nó vẫn ở đó. Hành trình này nhẹ nhàng đưa bạn đến nơi tâm hồn được nhìn nhận, được vỗ về và được chữa lành.</p>
+      </div>
+      <div class="qa-item">
+        <div class="q"><span>“</span>Tôi thật sự thuộc về đâu?<span>”</span></div>
+        <p>Khi biết mình được tạo nên có chủ đích, được yêu thương trước cả khi mình biết đến, ta tìm lại được chỗ đứng vững vàng giữa cuộc đời.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:48px;">
+      <p class="verse">“Hỡi những kẻ mệt mỏi và gánh nặng, hãy đến cùng ta, ta sẽ cho các ngươi được yên nghỉ.”
+        <span class="ref">— Lời mời gọi từ Kinh Thánh</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Cảm nhận học viên</div>
+    <h2 class="h2">Những tấm lòng đã được chạm đến</h2>
+    <div class="tnote-wrap"><span class="tnote">✎ Nội dung minh hoạ — chờ anh/chị duyệt &amp; thay bằng lời chứng thật</span></div>
+
+    <div class="t-grid">
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>“Tôi đến với khóa học chỉ vì tò mò, vì trước giờ chưa từng đọc Kinh Thánh. Vậy mà sau 16 buổi, tôi tìm được sự bình an mà bao năm bon chen tôi chưa từng có. Câu hỏi ‘tôi là ai’ trong lòng cuối cùng đã có lời đáp.”</p>
+        <div class="who"><span class="av">L</span><div><b>Chị Lan</b><small>Nhân viên văn phòng · Hà Nội</small></div></div>
+      </div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>“Điều tôi quý nhất là sự nhẹ nhàng. Không ép buộc, không phán xét. Người hướng dẫn kiên nhẫn lắng nghe cả những hoài nghi của tôi. Tâm hồn tôi như được tháo gỡ một gánh nặng rất cũ.”</p>
+        <div class="who"><span class="av">M</span><div><b>Anh Minh</b><small>Kỹ sư · TP. Hồ Chí Minh</small></div></div>
+      </div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>“Học online qua Zoom mà tôi vẫn cảm nhận được sự ấm áp như đang ngồi cạnh nhau. Mỗi buổi học là một lần được an ủi. Tôi biết ơn vì có người đã trao cho tôi món quà này — miễn phí mà thật sự vô giá.”</p>
+        <div class="who"><span class="av">H</span><div><b>Cô Hương</b><small>Tiểu thương · Đà Nẵng</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGN UP -->
+<section class="signup" id="dangky">
+  <span class="glow g2"></span>
+  <div class="wrap">
+    <div class="eyebrow">Đăng ký tham gia</div>
+    <h2 class="h2">Nhận món quà của bạn ngay hôm nay</h2>
+    <p class="sub">Để lại thông tin bên dưới, chúng tôi sẽ liên hệ và gửi bạn lịch học cùng đường link tham gia. Hoàn toàn miễn phí.</p>
+
+    <div class="form-card">
+      <div id="formMsg" class="form-msg"></div>
+      <form id="signupForm" novalidate>
+        <div class="field">
+          <label>Họ và tên <span class="req">*</span></label>
+          <input type="text" name="hoten" placeholder="Nguyễn Văn An" required />
+        </div>
+        <div class="field">
+          <label>Số điện thoại <span class="req">*</span></label>
+          <input type="tel" name="sodienthoai" placeholder="09xx xxx xxx" required />
+        </div>
+        <div class="field">
+          <label>Email <span class="req">*</span></label>
+          <input type="email" name="email" placeholder="ban@email.com" required />
+        </div>
+        <div class="field">
+          <label>Địa chỉ <span class="req">*</span></label>
+          <input type="text" name="diachi" placeholder="Quận/Huyện, Tỉnh/Thành phố" required />
+        </div>
+        <button type="submit" class="btn btn-primary" id="submitBtn">Đăng ký miễn phí</button>
+        <p class="privacy">Thông tin của bạn được giữ kín và chỉ dùng để liên hệ về khóa học. 🤍</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="brand"><span class="dot">✦</span> Chạm Kinh Thánh</div>
+    <p>“Món quà tặng người trân quý” — Khóa học Kinh Thánh miễn phí, 16 buổi, online &amp; offline.</p>
+    <p style="margin-top:6px;font-size:13px;">© <span id="year"></span> Chạm Kinh Thánh. Được trao đi bằng tấm lòng.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ============================================================
+     CẤU HÌNH FORM — dán URL webhook n8n của anh vào đây.
+     Để trống ("") thì form sẽ chạy chế độ DEMO (hiện thông báo
+     thành công nhưng KHÔNG gửi dữ liệu đi đâu cả).
+     ============================================================ */
+  const WEBHOOK_URL = ""; // ví dụ: "https://180-93-59-9.sslip.io/webhook/dangky-khoahoc"
+
+  const form = document.getElementById('signupForm');
+  const msg  = document.getElementById('formMsg');
+  const btn  = document.getElementById('submitBtn');
+
+  function showMsg(type, text){
+    msg.className = 'form-msg ' + type;
+    msg.textContent = text;
+    msg.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    const data = {
+      hoten: form.hoten.value.trim(),
+      sodienthoai: form.sodienthoai.value.trim(),
+      email: form.email.value.trim(),
+      diachi: form.diachi.value.trim(),
+      khoahoc: "Món quà tặng người trân quý",
+      thoigian: new Date().toISOString()
+    };
+
+    if(!data.hoten || !data.sodienthoai || !data.email || !data.diachi){
+      showMsg('err', 'Vui lòng điền đầy đủ các thông tin có dấu *.');
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Đang gửi...';
+
+    try{
+      if(WEBHOOK_URL){
+        const res = await fetch(WEBHOOK_URL, {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify(data)
+        });
+        if(!res.ok) throw new Error('HTTP ' + res.status);
+      }else{
+        // Chế độ DEMO — chưa gắn webhook
+        await new Promise(r=>setTimeout(r, 700));
+        console.log('[DEMO] Dữ liệu đăng ký (chưa gửi đi):', data);
+      }
+      form.reset();
+      showMsg('ok', '🤍 Cảm ơn bạn! Đăng ký đã được ghi nhận. Chúng tôi sẽ sớm liên hệ để gửi bạn lịch học.');
+    }catch(err){
+      showMsg('err', 'Rất tiếc, có lỗi khi gửi. Vui lòng thử lại hoặc liên hệ trực tiếp với chúng tôi.');
+      console.error(err);
+    }finally{
+      btn.disabled = false;
+      btn.textContent = 'Đăng ký miễn phí';
+    }
+  });
+</script>
+</body>
+</html>
