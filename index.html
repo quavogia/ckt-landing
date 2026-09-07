@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -559,8 +560,18 @@
      CẤU HÌNH FORM — dán URL webhook n8n của anh vào đây.
      Để trống ("") thì form sẽ chạy chế độ DEMO (hiện thông báo
      thành công nhưng KHÔNG gửi dữ liệu đi đâu cả).
+     07/09/2026: đổi từ VPS CŨ (180-93-59-9.sslip.io, đã ngừng hoạt động từ
+     16/07 — mọi đăng ký gửi qua URL cũ đều rơi vào hư không) sang domain
+     đang sống thật.
      ============================================================ */
-  const WEBHOOK_URL = "https://180-93-59-9.sslip.io/webhook/dangky-khoahoc";
+  const WEBHOOK_URL = "https://monquaautomation.com/webhook/dangky-khoahoc";
+
+  // 07/09/2026: đọc mã nguồn (?src=<kenh>_<video_id>) từ URL trang này — do
+  // link trong mô tả video/comment ghim gắn vào (xem 3 workflow Auto Post
+  // CKT: Shorts/LONG/SÁNG) — để đo được ĐÚNG video nào dẫn tới đăng ký.
+  // Không có tham số (người vào thẳng landing page, không qua video) → rỗng,
+  // n8n tự map "" thành "unknown" phía Sheet, không lỗi.
+  const urlSrc = new URLSearchParams(window.location.search).get('src') || '';
 
   const form = document.getElementById('signupForm');
   const msg  = document.getElementById('formMsg');
@@ -581,7 +592,8 @@
       diachi: form.diachi.value.trim(),
       nguoigioithieu: form.nguoigioithieu.value.trim(),
       khoahoc: "Chạm Kinh Thánh",
-      thoigian: new Date().toISOString()
+      thoigian: new Date().toISOString(),
+      src: urlSrc
     };
 
     if(!data.hoten || !data.sodienthoai || !data.email || !data.diachi){
